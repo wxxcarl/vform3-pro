@@ -82,6 +82,7 @@ export default {
       // console.log('setFormDataWithValueSource');
       const vs = this.widget?.options?.valueSource
       const formData = {}
+      console.log('vs', vs)
       traverseObj(vs.bindMap, (Scripts_ID, bindvalue) => {
         setLinkWidgetValueToScriptParams(bindvalue.scriptParams, this.getWidgetRef)
         loadBussinessSource(assembleBussinessParams({

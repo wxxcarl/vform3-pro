@@ -12,12 +12,6 @@
                    :label="item.label"></el-option>
       </el-select>
     </el-form-item>
-    <el-form-item :label="i18nt('designer.setting.customClass')">
-      <el-select v-model="optionModel.customClass" multiple filterable allow-create
-                 default-first-option>
-        <el-option v-for="(item, idx) in cssClassList" :key="idx" :label="item" :value="item"></el-option>
-      </el-select>
-    </el-form-item>
     <el-form-item :label="i18nt('designer.setting.showIndex')">
       <el-switch v-model="optionModel.showIndex"></el-switch>
     </el-form-item>
@@ -32,14 +26,6 @@
     </el-form-item>
     <el-form-item :label="i18nt('designer.setting.showSummary')">
       <el-switch v-model="optionModel.showSummary"></el-switch>
-    </el-form-item>
-    <el-form-item :label="i18nt('designer.setting.stripe')">
-      <el-switch v-model="optionModel.stripe"></el-switch>
-    </el-form-item>
-    <el-form-item :label="i18nt('designer.setting.rowSpacing')">
-      <el-input-number v-model="optionModel.rowSpacing" controls-position="right" :min="0" :max="20"
-                       style="width: 100%">
-      </el-input-number>
     </el-form-item>
     <el-form-item :label="i18nt('designer.setting.widgetSize')">
       <el-select v-model="optionModel.tableSize">

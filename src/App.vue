@@ -46,7 +46,7 @@ export default {
 
       //全局数据源变量
       globalDsv: {
-        testApiHost: 'http://www.test.com/api'
+        testApiHost: 'https://jsonplaceholder.typicode.com'
       },
 
       elLocaleMap: {

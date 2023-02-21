@@ -10,32 +10,6 @@
 
 <template>
   <el-container class="main-container full-height">
-    <el-header class="main-header" v-if="designerConfig.logoHeader !== false">
-      <div class="float-left main-title">
-        <img src="../../assets/vform-logo.png" @click="openHome">
-        <span class="bold">{{ vfProductName }}</span> {{ vfProductTitle }} <span
-          class="version-span">Ver {{ vFormVersion }}</span></div>
-      <div class="float-right external-link">
-        <el-dropdown v-if="showLink('languageMenu')" :hide-timeout="2000" @command="handleLanguageChanged">
-          <span class="el-dropdown-link">{{ curLangName }}<svg-icon icon-class="el-arrow-down"/></span>
-          <template #dropdown>
-            <el-dropdown-menu>
-              <el-dropdown-item command="zh-CN">{{ i18nt('application.zh-CN') }}</el-dropdown-item>
-              <el-dropdown-item command="en-US">{{ i18nt('application.en-US') }}</el-dropdown-item>
-            </el-dropdown-menu>
-          </template>
-        </el-dropdown>
-        <!--
-        <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, gitUrl)" target="_blank"><svg-icon icon-class="github" />{{i18nt('application.github')}}</a>
-        <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, docUrl)" target="_blank"><svg-icon icon-class="document" />{{i18nt('application.document')}}</a>
-        <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, chatUrl)" target="_blank">{{i18nt('application.qqGroup')}}</a>
-        <a v-if="showLink('externalLink')" href="javascript:void(0)" @click="(ev) => openUrl(ev, subScribeUrl)" target="_blank">
-          {{i18nt('application.subscription')}}<i class="el-icon-top-right"></i></a>
-        -->
-        <a href="javascript:void(0)">&nbsp;</a>
-      </div>
-    </el-header>
-
     <el-container>
       <el-aside class="side-panel">
         <widget-panel :designer="designer"/>
@@ -120,7 +94,7 @@ export default {
           externalLink: true,  //是否显示GitHub、文档等外部链接
           formTemplates: true,  //是否显示表单模板
           eventCollapse: true,  //是否显示组件事件属性折叠面板
-          widgetNameReadonly: true,  //禁止修改组件名称
+          widgetNameReadonly: false,  //禁止修改组件名称
           clearDesignerButton: true,  //是否显示清空设计器按钮
           previewFormButton: true,  //是否显示预览表单按钮
           importJsonButton: true,  //是否显示导入JSON按钮
@@ -128,7 +102,7 @@ export default {
           exportCodeButton: true,  //是否显示导出代码按钮
           generateSFCButton: true,  //是否显示生成SFC按钮
           dataSourceButton: false, //是否显示数据源按钮
-          logoHeader: true,  //是否显示Logo头部区域（仅Pro）
+          logoHeader: false,  //是否显示Logo头部区域（仅Pro）
 
           toolbarMaxWidth: 420,  //设计器工具按钮栏最大宽度（单位像素）
           toolbarMinWidth: 300,  //设计器工具按钮栏最小宽度（单位像素）

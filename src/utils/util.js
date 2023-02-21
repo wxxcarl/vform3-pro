@@ -433,7 +433,7 @@ export function assembleAxiosConfig(arrayObj, DSV) {
 function buildRequestConfig(dataSource, DSV, isSandbox) {
   let config = {}
   if (dataSource.requestURLType === 'String') {
-    config.url = dataSource.requestURL
+    config.url = DSV.testApiHost + dataSource.requestURL
   } else {
     config.url = eval(dataSource.requestURL)
   }
@@ -453,7 +453,7 @@ export async function runDataSourceRequest(dataSource, DSV, isSandbox, $message)
     let requestConfig = buildRequestConfig(dataSource, DSV, isSandbox)
     //console.log('test------', requestConfig)
     let result = await axios.request(requestConfig)
-
+    console.log('DSV', DSV)
     //let dhFn = new Function('result', 'sandbox', 'form', 'widget', dataSource.dataHandlerCode)
     let dhFn = new Function('result', 'isSandbox', 'DSV', dataSource.dataHandlerCode)
     return dhFn.call(null, result, isSandbox, DSV)

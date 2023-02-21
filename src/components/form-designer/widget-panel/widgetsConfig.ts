@@ -305,12 +305,12 @@ export const containers = [
       //行点击事件
       onTableRowClick: '',
       refreshWidget: '', //关联刷新的组件ID
-      bussinessSource: {
-        currentNodeKey: "",
-        scriptParams: [],
-        expandedNodes: [],
-        pageSize: 10
-      },
+      // bussinessSource: {
+      //   currentNodeKey: "",
+      //   scriptParams: [],
+      //   expandedNodes: [],
+      //   pageSize: 10
+      // },
     }
   }
 

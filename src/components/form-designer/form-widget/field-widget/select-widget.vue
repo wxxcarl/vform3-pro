@@ -18,7 +18,7 @@
                @focus="handleFocusCustomEvent" @blur="handleBlurCustomEvent"
                @change="handleChangeEvent">
       <el-option v-for="(item,index) in field.options.optionItems" :key="index" :label="item[field.options?.labelKey]"
-                 :value="item" :disabled="item.disabled">
+                 :value="item[field.options?.valueKey]" :disabled="item.disabled">
       </el-option>
     </el-select>
     <template v-if="isReadMode">

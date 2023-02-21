@@ -371,8 +371,10 @@ export default {
         newDsv.widgetName = this.widget.options.name
         newDsv.pageSize = this.pageSize
         newDsv.currentPage = this.currentPage
+        console.log('loadColumnsFromDS', this.widget);
         runDataSourceRequest(curDS, newDsv, false, this.$message).then(res => {
           this.setTableData(res)
+          this.setPagination({total: 200})
         }).catch(err => {
           this.$message.error(err.message)
         })

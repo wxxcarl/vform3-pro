@@ -259,7 +259,7 @@
           ],
           requestMethod: 'get',
           configHandlerCode: '  return config',
-          dataHandlerCode: '  return result.data.data;',
+          dataHandlerCode: '  return result.data;',
           errorHandlerCode: '  $message.error(error.message);',
         },
         curEditDSIdx: -1,
@@ -327,7 +327,7 @@
         this.dsModel.params = []
         this.dsModel.data = []
         this.dsModel.configHandlerCode = '  return config'
-        this.dsModel.dataHandlerCode = '  return result.data.data;'
+        this.dsModel.dataHandlerCode = '  return result.data;'
         this.dsModel.errorHandlerCode = '  $message.error(error.message);'
 
         this.showDataSourceDialogFlag = true
